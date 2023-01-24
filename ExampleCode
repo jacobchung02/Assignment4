@@ -1,0 +1,47 @@
+interface CarInterface
+{
+    int getCarSize();  // Abstract by default.
+}
+
+
+abstract class SupCar  // Parent, or "superclass".
+{
+    String name;
+
+    abstract void getPlate();
+
+    String get_name()
+    {
+        return name;
+    }
+}
+
+
+class Car extends SupCar  // Subclass of SupCar.
+{
+    void getPlate()
+    {
+
+    }
+}
+
+
+// Sublass of Car, which is a subclass of SupCar. Implements an interface
+public class SportsCar extends Car implements CarInterface  
+{
+    public int getCarSize()
+    {
+        return 5;
+    }
+
+    void getPlate()
+    {
+
+    }
+    public static void main(String[] args) throws Exception 
+    {
+        SportsCar ferrari = new SportsCar();
+        System.out.println(ferrari.getCarSize());
+    }
+}
+
